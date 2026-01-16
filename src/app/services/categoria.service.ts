@@ -1,5 +1,5 @@
 
-import { Injectable, runInInjectionContext, Injector } from '@angular/core';
+import { Injectable, runInInjectionContext, Injector, Provider } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Categoria } from '../models/categoria';
 
@@ -46,6 +46,7 @@ export class CategoriaService {
       .update(data);
     });
   }
+
 }
 
 
