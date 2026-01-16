@@ -1,0 +1,6 @@
+{
+    "chat.agent.codeBlockProgress": false,
+    "chat.agent.enabled": false,
+    "chat.agent.thinking.generateTitles": false,
+    "chat.useAgentsMdFile": false
+}
