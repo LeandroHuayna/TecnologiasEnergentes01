@@ -19,17 +19,36 @@ export class CambiarRol implements OnInit {
     this.usuarioService.ObtenerUsuarios().subscribe((usuarios :Usuarios[]) => {
       console.log(usuarios);
       this.usuarios = usuarios;
+      
       usuarios.forEach((Usuario) => {
         this.rolSeleccionado[Usuario.uid] = Usuario.rol;
       });
     });
+    this.recargarUsuarios();
   }
   //actualiza el rol
   cambiarRol(uid: string): void {
 
     const rolNuevo = this.rolSeleccionado[uid];
 
-    this.usuarioService.CambiarRol(uid, rolNuevo);
+    this.usuarioService.CambiarRol(uid, rolNuevo).then(() => {
+      console.log("Rol actualizado para ${uid}")
+      this.recargarUsuarios();
+    })
     
   }
+
+
+  recargarUsuarios() {
+  this.usuarioService.ObtenerUsuarios().subscribe((usuarios: Usuarios[]) => {
+    this.usuarios = usuarios;
+    usuarios.forEach(usuario => {
+      this.rolSeleccionado[usuario.uid] = usuario.rol;
+    });
+    // Fuerza que Angular refresque la vista
+    // Si tu constructor tiene cdr: ChangeDetectorRef
+    // this.cdr.detectChanges();
+  });
+}
+
 }

@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 
 import { FormsModule } from '@angular/forms';
 import { GestionarCategoria } from './gestionar-categoria/gestionar-categoria';
+import { AgregarProducto } from './agregar-producto/agregar-producto';
+import { ListarProducto } from './listar-producto/listar-producto';
 
 
 
@@ -18,7 +20,9 @@ import { GestionarCategoria } from './gestionar-categoria/gestionar-categoria';
     BienvenidaAdmin,
     CambiarRol,
     DesactivarUsuario,
-    GestionarCategoria
+    GestionarCategoria,
+    AgregarProducto,
+    ListarProducto
   ],
   imports: [
     CommonModule,

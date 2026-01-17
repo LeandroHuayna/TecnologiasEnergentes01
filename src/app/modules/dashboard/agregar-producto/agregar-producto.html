@@ -1,0 +1,54 @@
+<div class="card">
+
+    <h2>Agregar producto</h2>
+
+    <div class="form-group">
+        <label>Nombre</label>
+        <input
+        type="text"
+        placeholder="Nombre del producto"
+        [(ngModel)]="producto.nombre">
+    </div>
+
+    <div class="form-group">
+        <label>Descripción</label>
+        <textarea
+        rows="3"
+        placeholder="Descripción del producto"
+        [(ngModel)]="producto.descripcion">
+        </textarea>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+        <label>Precio</label>
+        <input
+            type="number"
+            placeholder="Precio"
+            [(ngModel)]="producto.precio">
+        </div>
+
+        <div class="form-group">
+        <label>Stock</label>
+        <input
+            type="number"
+            placeholder="Stock"
+            [(ngModel)]="producto.stock">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Categoría</label>
+        <select [(ngModel)]="producto.categoriaId">
+        <option value="">Seleccione categoría</option>
+        <option *ngFor="let c of categorias" [value]="c.id">
+            {{ c.nombre }}
+        </option>
+        </select>
+    </div>
+
+    <button class="btn-primary" (click)="guardarProducto()">
+        Guardar producto
+    </button>
+
+</div>

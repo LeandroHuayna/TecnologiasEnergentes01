@@ -8,6 +8,8 @@ import { BienvenidaAdmin } from './modules/dashboard/bienvenida-admin/bienvenida
 import { BienvenidaUsuario } from './modules/dashboard/bienvenida-usuario/bienvenida-usuario';
 import { DesactivarUsuario } from './modules/dashboard/bienvenida-admin/desactivar-usuario/desactivar-usuario';
 import { GestionarCategoria } from './modules/dashboard/gestionar-categoria/gestionar-categoria';
+import { AgregarProducto } from './modules/dashboard/agregar-producto/agregar-producto';
+import { ListarProducto } from './modules/dashboard/listar-producto/listar-producto';
 
   const routes: Routes = [
 
@@ -27,6 +29,15 @@ import { GestionarCategoria } from './modules/dashboard/gestionar-categoria/gest
         {
           path: 'gestionar-categoria',
           component: GestionarCategoria,
+        },
+        //productos
+        {
+          path: 'agregar-producto',
+          component: AgregarProducto,
+        },
+        {
+          path: 'listar-producto',
+          component: ListarProducto,
         },
       ],
     }, 

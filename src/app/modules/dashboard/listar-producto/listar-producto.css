@@ -1,29 +1,29 @@
-/* Contenedor principal */
-.cat-wrapper {
-    max-width: 750px;
+.lp-container {
+    max-width: 800px;
     margin: 50px auto;
     padding: 30px;
-    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    background: linear-gradient(135deg, #f9fbff, #ffffff);
     border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.cat-wrapper h2 {
+.lp-container h2 {
     text-align: center;
     margin-bottom: 30px;
+    font-weight: 700;
     color: #222;
 }
 
-/* FORMULARIO NUEVA CATEGORÍA */
-.cat-form {
+/* FORMULARIO NUEVO PRODUCTO */
+.lp-form {
     display: flex;
-    gap: 12px;
     flex-wrap: wrap;
+    gap: 12px;
     margin-bottom: 25px;
 }
 
-.cat-form input {
+.lp-form input {
     flex: 1 1 150px;
     padding: 10px 12px;
     border-radius: 10px;
@@ -32,65 +32,71 @@
     transition: 0.3s;
 }
 
-.cat-form input:focus {
-    border-color: #ff6a00;
-    box-shadow: 0 0 6px rgba(255,106,0,0.3);
+.lp-form input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 6px rgba(74,144,226,0.3);
 }
 
-.btn-agregar {
+.lp-agregar-btn {
     padding: 10px 18px;
     border: none;
     border-radius: 10px;
-    background: #ff6a00;
+    background: #4a90e2;
     color: #fff;
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.btn-agregar:hover {
-    background: #e55b00;
+.lp-agregar-btn:hover {
+    background: #357ABD;
 }
 
-/* LISTA DE CATEGORÍAS */
-.cat-lista {
+/* LISTA DE PRODUCTOS */
+.lp-lista {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.cat-item {
+.lp-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background: #fff;
+    background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     transition: transform 0.2s;
 }
 
-.cat-item:hover {
+.lp-item:hover {
     transform: translateY(-2px);
 }
 
-/* INFO CATEGORÍA */
-.cat-info {
+/* INFO PRODUCTO */
+.lp-info {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
-.cat-info strong {
+.lp-detalle {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.lp-info strong {
     font-size: 16px;
 }
 
-.cat-info small {
+.lp-info small {
     color: #555;
 }
 
-/* EDICIÓN CATEGORÍA */
-.cat-edicion input {
+/* EDICIÓN PRODUCTO */
+.lp-edicion input {
     margin-right: 8px;
     margin-bottom: 6px;
     padding: 6px 10px;
@@ -99,57 +105,47 @@
     transition: 0.2s;
 }
 
-.cat-edicion input:focus {
-    border-color: #ff6a00;
-    box-shadow: 0 0 5px rgba(255,106,0,0.3);
+.lp-edicion input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74,144,226,0.3);
 }
 
-/* ACCIONES */
-.cat-acciones {
+/* ACCIONES PRODUCTO */
+.lp-acciones {
     display: flex;
     gap: 8px;
 }
 
-.cat-acciones button {
+.lp-acciones button {
     padding: 6px 12px;
     border-radius: 8px;
     border: none;
     font-size: 13px;
-    font-weight: 500;
     cursor: pointer;
+    font-weight: 500;
     transition: 0.2s;
 }
 
-.cat-acciones button:hover {
+.lp-acciones button:hover {
     opacity: 0.85;
 }
 
-.cat-acciones button:first-child {
-    background: #ffc107; /* Editar */
+.lp-acciones button:first-child {
+    background: #f0ad4e; /* Editar */
     color: #fff;
 }
 
-.cat-acciones button:nth-child(2) {
+.lp-acciones button:nth-child(2) {
     background: #28a745; /* Guardar */
     color: #fff;
 }
 
-.cat-acciones button:nth-child(3) {
+.lp-acciones button:nth-child(3) {
     background: #6c757d; /* Cancelar */
     color: #fff;
 }
 
-.btn-activar {
-    background: #17a2b8; /* Activar */
-    color: #fff;
-}
-
-.btn-desactivar {
-    background: #dc3545; /* Desactivar */
-    color: #fff;
-}
-
-.btn-eliminar {
-    background: #b71c1c;
+.lp-eliminar-btn {
+    background: #dc3545;
     color: #fff;
 }
