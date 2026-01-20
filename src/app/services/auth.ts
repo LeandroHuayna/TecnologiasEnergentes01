@@ -14,11 +14,7 @@ export class Auth {
 
   async registrar(email: string, password: string) {
 
-      const cred = await this.afAuth.createUserWithEmailAndPassword(
-      
-      email, 
-      password
-    );
+    const cred = await this.afAuth.createUserWithEmailAndPassword(email, password);
     const uid = cred.user?.uid || '';
 
     await this.usuarioService.crearUsuario(uid, email); //puede pasar algo "iud"

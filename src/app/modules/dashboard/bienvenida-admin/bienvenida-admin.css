@@ -81,7 +81,7 @@
 .topbar .btn:hover {
     background-color: grey;
     color: #fff;
-    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+    box-shadow: 0 4px 12px black;
     transform: translateY(-2px);
 }
 
