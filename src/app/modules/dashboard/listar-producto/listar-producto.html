@@ -1,47 +1,53 @@
 <div class="lp-container">
-    <h2>Gestión de Productos</h2>
+  <h2>Gestión de Productos</h2>
 
-    <!-- FORMULARIO NUEVO PRODUCTO -->
-    <div class="lp-form">
-        <input placeholder="Nombre" [(ngModel)]="nombreEditado" />
-        <input placeholder="Descripción" [(ngModel)]="descripcionEditada" />
-        <input type="number" placeholder="Precio" [(ngModel)]="precioEditado" />
-        <input type="number" placeholder="Stock" [(ngModel)]="stockEditado" />
-        <button class="lp-agregar-btn">Agregar</button>
+  <!-- LISTA DE PRODUCTOS -->
+  <div class="lp-lista">
+    <div class="lp-item" *ngFor="let p of productos">
+
+      <!-- VISTA NORMAL -->
+      <div *ngIf="productoEditando !== p.id" class="lp-info">
+        <div class="lp-detalle">
+          <strong>{{ p.nombre }}</strong>
+          <small>{{ p.descripcion }}</small>
+        </div>
+        <div class="lp-detalle">
+          <small>Precio: {{ p.precio | currency:'USD' }}</small>
+          <small>Stock: {{ p.stock }}</small>
+        </div>
+      </div>
+
+      <!-- MODO EDICIÓN -->
+      <div *ngIf="productoEditando === p.id" class="lp-edicion">
+        <input [(ngModel)]="nombreEditado" placeholder="Nombre" />
+        <input [(ngModel)]="descripcionEditada" placeholder="Descripción" />
+        <input type="number" [(ngModel)]="precioEditado" placeholder="Precio" />
+        <input type="number" [(ngModel)]="stockEditado" placeholder="Stock" />
+      </div>
+
+      <!-- ACCIONES -->
+      <div class="lp-acciones">
+        <button *ngIf="productoEditando !== p.id"
+                (click)="editarProducto(p)">
+          Editar
+        </button>
+
+        <button *ngIf="productoEditando === p.id"
+                (click)="guardarEdicion(p)">
+          Guardar
+        </button>
+
+        <button *ngIf="productoEditando === p.id"
+                (click)="cancelarEdicion()">
+          Cancelar
+        </button>
+
+        <button class="lp-eliminar-btn"
+                (click)="eliminarProducto(p.id!)">
+          Eliminar
+        </button>
+      </div>
+
     </div>
-
-    <!-- LISTA DE PRODUCTOS -->
-    <div class="lp-lista">
-        <div class="lp-item" *ngFor="let p of productos">
-
-        <!-- VISTA NORMAL -->
-        <div *ngIf="productoEditando !== p.id" class="lp-info">
-            <div class="lp-detalle">
-            <strong>{{ p.nombre }}</strong>
-            <small>{{ p.descripcion }}</small>
-            </div>
-            <div class="lp-detalle">
-            <small>Precio: {{ p.precio | currency:'USD' }}</small>
-            <small>Stock: {{ p.stock }}</small>
-            </div>
-        </div>
-
-        <!-- MODO EDICIÓN -->
-        <div *ngIf="productoEditando === p.id" class="lp-edicion">
-            <input [(ngModel)]="nombreEditado" placeholder="Nombre" />
-            <input [(ngModel)]="descripcionEditada" placeholder="Descripción" />
-            <input type="number" [(ngModel)]="precioEditado" placeholder="Precio" />
-            <input type="number" [(ngModel)]="stockEditado" placeholder="Stock" />
-        </div>
-
-        <!-- ACCIONES -->
-        <div class="lp-acciones">
-            <button *ngIf="productoEditando !== p.id" (click)="editarProducto(p)">Editar</button>
-            <button *ngIf="productoEditando === p.id" (click)="guardarEdicion(p)">Guardar</button>
-            <button *ngIf="productoEditando === p.id" (click)="cancelarEdicion()">Cancelar</button>
-            <button class="lp-eliminar-btn" (click)="eliminarProducto(p.id!)">Eliminar</button>
-        </div>
-
-        </div>
-    </div>
+  </div>
 </div>
